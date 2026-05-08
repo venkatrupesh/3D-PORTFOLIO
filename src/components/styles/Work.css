@@ -1,0 +1,336 @@
+.work-section {
+  transition: 0s;
+  height: 100vh;
+  box-sizing: border-box;
+  will-change: transform;
+  position: relative;
+  z-index: 10;
+  background-color: var(--backgroundColor);
+}
+
+.work-main-title {
+  margin-top: 100px;
+  font-size: 70px;
+  font-weight: 400;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, var(--accentColor) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+}
+
+.work-main-title > span {
+  color: var(--accentColor);
+}
+
+.work-subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #adacac;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.work-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-content: stretch;
+}
+
+.work-flex {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  margin-left: -80px;
+  padding-right: 120px;
+  position: relative;
+}
+
+.work-box {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+.work-card {
+  background: linear-gradient(135deg, rgba(194, 164, 255, 0.05) 0%, rgba(168, 124, 255, 0.02) 100%);
+  border: 1px solid rgba(194, 164, 255, 0.2);
+  border-radius: 24px;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.work-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(194, 164, 255, 0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.work-card:hover {
+  transform: translateY(-15px) rotateX(2deg);
+  border-color: var(--accentColor);
+  box-shadow: 
+    0 30px 80px rgba(194, 164, 255, 0.4),
+    0 0 60px rgba(194, 164, 255, 0.3),
+    inset 0 0 40px rgba(194, 164, 255, 0.1);
+}
+
+.work-card:hover::before {
+  opacity: 1;
+}
+
+.work-card-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 80px;
+  font-weight: 700;
+  color: rgba(194, 164, 255, 0.1);
+  z-index: 2;
+  line-height: 1;
+  transition: all 0.5s ease;
+}
+
+.work-card:hover .work-card-number {
+  color: rgba(194, 164, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.work-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+
+.work-image {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.work-card:hover .work-image img {
+  transform: scale(1.1);
+}
+
+.work-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(11, 8, 12, 0.8) 100%);
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+}
+
+.work-card:hover .work-overlay {
+  opacity: 0.3;
+}
+
+.work-info {
+  padding: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.work-info h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.work-card:hover .work-info h3 {
+  color: var(--accentColor);
+}
+
+.work-category {
+  font-size: 14px;
+  color: var(--accentColor);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.work-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #adacac;
+  margin: 0 0 20px 0;
+}
+
+.work-tech {
+  margin-bottom: 25px;
+  padding: 15px;
+  background: rgba(194, 164, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(194, 164, 255, 0.1);
+}
+
+.work-tech h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  color: var(--accentColor);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.work-tech p {
+  font-size: 14px;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 400;
+}
+
+.work-github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--accentColor) 0%, #a87cff 100%);
+  color: var(--backgroundColor);
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(194, 164, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.work-github-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.work-github-link:hover::before {
+  left: 100%;
+}
+
+.work-github-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(194, 164, 255, 0.5);
+  gap: 14px;
+}
+
+.work-github-link svg {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.work-github-link:hover svg:last-child {
+  transform: translate(4px, -4px);
+}
+
+@media only screen and (max-width: 1400px) {
+  .work-main-title {
+    font-size: 50px;
+  }
+  .work-subtitle {
+    font-size: 16px;
+  }
+  .work-box {
+    width: 450px;
+    padding: 30px;
+  }
+  .work-flex {
+    margin-left: -50px;
+    padding-right: 75px;
+  }
+  .work-info h3 {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .work-box {
+    width: 400px;
+    padding: 20px;
+  }
+  .work-flex {
+    margin-left: -30px;
+    padding-right: 45px;
+  }
+  .work-card-number {
+    font-size: 60px;
+  }
+}
+
+@media only screen and (max-height: 900px) {
+  .work-image-wrapper {
+    height: 250px;
+  }
+  .work-main-title {
+    font-size: 50px;
+    margin-top: 70px;
+  }
+}
+
+@media only screen and (max-height: 650px) {
+  .work-image-wrapper {
+    height: 200px;
+  }
+  .work-main-title {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .work-container {
+    align-content: normal;
+  }
+  .work-flex {
+    height: auto;
+  }
+}
