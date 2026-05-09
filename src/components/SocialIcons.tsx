@@ -74,11 +74,25 @@ const SocialIcons = () => {
           </a>
         </span>
       </div>
-      <a className="resume-button" href="/resume.pdf" target="_blank" download="K_Venkata_Rupesh_Resume.pdf">
-        <HoverLinks text="RESUME" />
-        <span>
-          <TbNotes />
-        </span>
+      <a className="resume-button-3d" href="/resume.pdf" target="_blank" download="K_Venkata_Rupesh_Resume.pdf" data-cursor="disable">
+        <div className="resume-glow"></div>
+        <div className="resume-particles">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div className="resume-content">
+          <span className="resume-icon">
+            <TbNotes />
+          </span>
+          <span className="resume-text">
+            <HoverLinks text="RESUME" />
+          </span>
+          <span className="resume-badge">PDF</span>
+        </div>
+        <div className="resume-shine"></div>
       </a>
     </div>
   );

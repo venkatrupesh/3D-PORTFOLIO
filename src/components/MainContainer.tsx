@@ -9,6 +9,7 @@ import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
+import TechShowcase from "./TechShowcase";
 import setSplitText from "./utils/splitText";
 
 const MainContainer = ({ children }: PropsWithChildren) => {
@@ -38,6 +39,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
         <div id="smooth-content">
           <div className="container-main">
             <Landing>{!isDesktopView && children}</Landing>
+            <TechShowcase />
             <About />
             <WhatIDo />
             <Career />
